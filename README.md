@@ -18,16 +18,15 @@ software which enables the use of this currency.
 
 VintageTimePieceCoin first started as a variant of Litecoin using Scrypt as
 the Proof-of-Work (PoW) hash algorithm to premine total of 2,000,000,000 coins.
- - 1 minute block target
- - 10,000,000 coins per block
+ - 2,000,000,000 at first block
+ - 0 from block 2 to 121
  - difficulty retarget: every block using Kimoto's gravity well
 
-
-At block 211 VintageTimePieceCoin transitioned to Proof-of-Stake-Velocity (PoSV)
+At block 122 VintageTimePieceCoin transitioned to Proof-of-Stake-Velocity (PoSV)
 algorithm which replaced Proof-of-Work (PoW).
  - 1 minute block target
  - 2 billion mined in PoW phase
- - 20% annual interest in PoSV phase
+ - 12% annual interest in PoSV phase
  - difficulty retarget: every block using Kimoto's gravity well
 
 On December 2015 work commenced on porting directly from Bitcoin v0.9 whilst maintaining the original functionality.
