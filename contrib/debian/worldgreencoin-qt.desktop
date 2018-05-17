@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=VintageTimePieceCoin
+Comment=VintageTimePieceCoin P2P Cryptocurrency
+Comment[fr]=VintageTimePieceCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=VintageTimePieceCoin, eşten eşe kriptografik sanal para birimi
+Exec=vintagetimepiececoin-qt %u
+Terminal=false
+Type=Application
+Icon=vintagetimepiececoin128
+MimeType=x-scheme-handler/vintagetimepiececoin;
+Categories=Office;Finance;
