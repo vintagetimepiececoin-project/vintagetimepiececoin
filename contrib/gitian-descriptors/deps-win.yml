@@ -124,5 +124,5 @@ script: |
     done
     #
     cd $INSTALLPREFIX
-    find include lib | sort | zip -X@ $OUTDIR/vintagetimepiececoin-deps-win$BITS-gitian-r16.zip
+    find include lib | sort | zip -X@ $OUTDIR/deps-win$BITS-gitian-r16.zip
   done # for BITS in
