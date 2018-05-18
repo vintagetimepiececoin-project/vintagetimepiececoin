@@ -16,7 +16,8 @@ typedef map<int, uint64_t> MapModifierCheckpoints;
 // This leads to a modifier selection interval of 27489 seconds,
 // which is roughly 7 hours 38 minutes, just a bit shorter than
 // the minimum stake age of 8 hours.
-unsigned int nModifierInterval = 13 * 60;
+//unsigned int nModifierInterval = 13 * 60;
+unsigned int nModifierInterval = 8; //288 seconds, shorter than min stake age of 5 minutes
 
 // FIXME
 // Hard checkpoints of stake modifiers to ensure they are deterministic
@@ -288,13 +289,11 @@ static bool GetKernelStakeModifier(uint256 hashBlockFrom, uint64_t& nStakeModifi
     {
         if (!chainActive.Next(pindex))
         {   // reached best block; may happen if node is behind on block chain
-            if (/*fPrintProofOfStake || */(pindex->GetBlockTime() + Params().StakeMinAge() - nStakeModifierSelectionInterval > GetAdjustedTime())) {
-                
+            if (fPrintProofOfStake || (pindex->GetBlockTime() + Params().StakeMinAge() - nStakeModifierSelectionInterval > GetAdjustedTime()))
                 return error("GetKernelStakeModifier() : reached best block at height %d from block at height %d",
                     pindex->nHeight, pindexFrom->nHeight);
-            } else {
+            else
                 return false;
-            }
         }
         pindex = chainActive.Next(pindex);
         if (pindex->GeneratedStakeModifier())
