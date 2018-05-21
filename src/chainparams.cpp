@@ -41,8 +41,8 @@ public:
 
         // PoSV
         bnProofOfStakeLimit = CBigNum(~uint256(0) >> 20);
-        nLastProofOfWorkHeight = 130;
-        nStakeMinAge = 300; //8 * 60 * 60; // 8 hours
+        nLastProofOfWorkHeight = 200;
+        nStakeMinAge = 3600; //8 * 60 * 60; // 8 hours
         nStakeMaxAge = 45 * 24 *  60 * 60; // 45 days
 
         const char* pszTimestamp = "May 9th 2018 was such a nice day...";
@@ -51,7 +51,7 @@ public:
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 2000000000 * COIN;
+        txNew.vout[0].nValue = 100000000 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
@@ -59,12 +59,12 @@ public:
         genesis.nVersion = 1;
         genesis.nTime    = 1525824000;
         genesis.nBits    = 0x1e0ffff0;
-        genesis.nNonce   = 144476;
+        genesis.nNonce   = 174859;
 
         hashGenesisBlock = genesis.GetHash();
         
-        assert(genesis.hashMerkleRoot == uint256("0xe783b334f17cc22a492d33f3c7cfb5718488c9a662ef98d6e5e5973f9266e8b7"));
-        assert(hashGenesisBlock == uint256("0x8f55b18c75226adc04ca9fa45251954fde6891ad9b594ace90a3e3c68e5480f3"));
+        assert(genesis.hashMerkleRoot == uint256("0xc331fc4693b8df4b798a5bd5dbb7b07db27583e04c53961c2fa29fe5a986756c"));
+        assert(hashGenesisBlock == uint256("0x02e1c698e36eef649ae4651a78737bd72c4b1bb85ad8434c0b5d3c1d4e561cc3"));
         
         //vSeeds.push_back(CDNSSeedData("vintagetimepiececoin.com", "seed.vintagetimepiececoin.com"));
 
@@ -120,13 +120,13 @@ public:
         nDefaultPort = 26042;
         nRPCPort = 26043;
         strDataDir = "testnet3";
-        nLastProofOfWorkHeight = 130; // Last POW block
+        nLastProofOfWorkHeight = 200; // Last POW block
 
         genesis.nTime = 1524704400;
-        genesis.nNonce = 2185844;
+        genesis.nNonce = 457216;
         hashGenesisBlock = genesis.GetHash();
         
-        assert(hashGenesisBlock == uint256("0x0f2489c796c45ae5e5639d64ebf409794d77224a831d348981e789ca5274226b"));
+        assert(hashGenesisBlock == uint256("0x8002c0f58d1eeb11ab732ed30e4e705b75d5baa5b961146af263141bbe7e6f48"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -155,15 +155,15 @@ public:
         pchMessageStart[3] = 0xdf;
         nSubsidyHalvingInterval = 150;
         bnProofOfWorkLimit = bnProofOfStakeLimit = CBigNum(~uint256(0) >> 1);
-        nLastProofOfWorkHeight = 130;
+        nLastProofOfWorkHeight = 200;
         genesis.nTime = 1524704400;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 0;
+        genesis.nNonce = 1;
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 26045;
         strDataDir = "regtest";
         
-        assert(hashGenesisBlock == uint256("0xafbc0877575e61bd3dee9994fabb6abf085c5d56ba358506f2c739bb02641d0d"));
+        assert(hashGenesisBlock == uint256("0x50d82b32fb957996533469caf8afcbd8e2dfd51de6c9c31b50fd2a7db01f1e5b"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
     }
