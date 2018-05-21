@@ -73,7 +73,7 @@ static const int DEFAULT_SCRIPTCHECK_THREADS = 0;
 static const int MAX_BLOCKS_IN_TRANSIT_PER_PEER = 128;
 /** Timeout in seconds before considering a block download peer unresponsive. */
 static const unsigned int BLOCK_DOWNLOAD_TIMEOUT = 60;
-/** Start checking POW after block 121 */
+/** Start checking POW after block 130 */
 static const int64_t CHECK_POW_FROM_NTIME = 1525824000;
 #ifdef USE_UPNP
 static const int fHaveUPnP = true;

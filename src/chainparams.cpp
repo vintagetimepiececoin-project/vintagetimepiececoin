@@ -41,7 +41,7 @@ public:
 
         // PoSV
         bnProofOfStakeLimit = CBigNum(~uint256(0) >> 20);
-        nLastProofOfWorkHeight = 121;
+        nLastProofOfWorkHeight = 130;
         nStakeMinAge = 300; //8 * 60 * 60; // 8 hours
         nStakeMaxAge = 45 * 24 *  60 * 60; // 45 days
 
@@ -120,7 +120,7 @@ public:
         nDefaultPort = 26042;
         nRPCPort = 26043;
         strDataDir = "testnet3";
-        nLastProofOfWorkHeight = 121; // Last POW block
+        nLastProofOfWorkHeight = 130; // Last POW block
 
         genesis.nTime = 1524704400;
         genesis.nNonce = 2185844;
@@ -155,7 +155,7 @@ public:
         pchMessageStart[3] = 0xdf;
         nSubsidyHalvingInterval = 150;
         bnProofOfWorkLimit = bnProofOfStakeLimit = CBigNum(~uint256(0) >> 1);
-        nLastProofOfWorkHeight = 121;
+        nLastProofOfWorkHeight = 130;
         genesis.nTime = 1524704400;
         genesis.nBits = 0x207fffff;
         genesis.nNonce = 0;
